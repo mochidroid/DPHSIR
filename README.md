@@ -1,6 +1,6 @@
 # DPHSIR
 
-[Paper](http://arxiv.org/abs/2209.08240) | [Pretrained Model](https://1drv.ms/u/s!AomvdxwcLmYImDiK2NiIkn_LjsOa?e=PPfex2)
+[Paper](http://arxiv.org/abs/2209.08240) | [Pretrained Model](https://1drv.ms/f/c/08662e1c1c77af89/IgCJr3ccHC5mIIAIOAwAAAAAAYpNvLF4uonAT_N14IddcuI?e=ik90gZ)
 
 **Deep Plug-and-Play Prior for Hyperspectral Image Restoration (Neurocomputing 2022)**
 
