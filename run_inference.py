@@ -121,7 +121,7 @@ def main():
     print('Saving MAT file...')
     os.makedirs(args.output_dir, exist_ok=True)
     
-    mat_name = f'{args.model_type}_{args.norm}.mat'
+    mat_name = f'{args.model_type}_{args.norm}_{args.sigma}.mat'
     save_path = os.path.join(args.output_dir, mat_name)
     
     # Save as MATLAB struct dict for params
