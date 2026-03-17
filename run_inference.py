@@ -1,4 +1,5 @@
 import os
+import time
 import argparse
 import scipy.io as sio
 import torch
@@ -95,8 +96,12 @@ def main():
 
     # 3. Inference
     print('Running inference...')
+    start_time = time.time()
     with torch.no_grad():
         pred = denoiser(tmp, args.sigma)
+    end_time = time.time()
+    running_time = end_time - start_time
+    print(f'Inference finished in {running_time:.4f} seconds.')
 
     if pad_h > 0 or pad_w > 0:
         pred = pred[:, :, :h, :w]
@@ -131,11 +136,16 @@ def main():
         'sigma': args.sigma
     }
     
+    other_result_dict = {
+        'running_time': running_time
+    }
+    
     sio.savemat(save_path, {
         'HSI_restored': pred_hsi, 
         'HSI_clean': gt_hsi, 
         'HSI_noisy': noisy_hsi,
         'params': params_dict,
+        'other_result': other_result_dict,
     })
     print('Saved to:', save_path)
 
